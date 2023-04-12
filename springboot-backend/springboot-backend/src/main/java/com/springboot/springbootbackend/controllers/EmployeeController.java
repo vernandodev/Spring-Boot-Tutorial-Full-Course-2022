@@ -3,7 +3,6 @@ package com.springboot.springbootbackend.controllers;
 import com.springboot.springbootbackend.entity.Employee;
 import com.springboot.springbootbackend.services.EmployeeService;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,5 +34,20 @@ public class EmployeeController {
     @GetMapping("{id}")
     public ResponseEntity<Employee> getEmployeeById(@PathVariable("id") Long employeeId) {
         return new ResponseEntity<Employee>(employeeService.getEmployeeById(employeeId), HttpStatus.OK);
+    }
+
+    // build update employees REST API
+    @PutMapping("{id}")
+    public ResponseEntity<Employee> updateEmployee(@PathVariable("id") Long id, @RequestBody Employee employee) {
+        return new ResponseEntity<Employee>(employeeService.updateEmployee(employee, id), HttpStatus.OK);
+    }
+
+    @DeleteMapping("{id}")
+    public ResponseEntity<String> deleteEmployee(@PathVariable("id") Long id) {
+        // delete employee data from DB
+        employeeService.deleteEmployee(id);
+
+        // return Http status
+        return new ResponseEntity<String>("Employee Deleted Successfully", HttpStatus.OK);
     }
 }
