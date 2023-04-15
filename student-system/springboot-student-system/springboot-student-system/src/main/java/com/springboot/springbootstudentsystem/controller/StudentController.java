@@ -15,3 +15,4 @@ public class StudentController {
         return studentService.getAllStudent();
     }
 }
+
