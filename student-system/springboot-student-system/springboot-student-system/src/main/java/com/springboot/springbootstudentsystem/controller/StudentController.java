@@ -13,8 +13,13 @@ import java.util.List;
 public class StudentController {
     public static final String STUDENT = "/student";
     private StudentService studentService;
+
+    public StudentController(StudentService studentService) {
+        this.studentService = studentService;
+    }
+
     @GetMapping(value = STUDENT)
-    public List<Student> getAllStudent() {
+    public List<Student> getAllStudent(Student student) {
         return studentService.getAllStudent();
     }
 }
