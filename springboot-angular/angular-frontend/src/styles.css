@@ -11,6 +11,10 @@
   color: white;
 }
 
+.bottom {
+  bottom: 200px;
+}
+
 .navbar {
   background-color: rgb(60, 174, 250);
 }
