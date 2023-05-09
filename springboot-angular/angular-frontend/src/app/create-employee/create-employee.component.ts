@@ -8,18 +8,22 @@ import { EmployeeService } from "../employee.service";
   styleUrls: ["./create-employee.component.css"],
 })
 export class CreateEmployeeComponent implements OnInit {
-  employees: Employee[];
+  employee: Employee = new Employee();
 
   constructor(private employeeService: EmployeeService) {}
 
-  ngOnInit(): void {
-    this.getEmployees();
+  ngOnInit(): void {}
+
+  saveEmployee() {
+    this.employeeService.createEmployee(this.employee).subscribe(
+      (data) => {
+        console.log(data);
+      },
+      (error) => console.log(error)
+    );
   }
 
-  // define the method here
-  private getEmployees() {
-    this.employeeService.getEmployeeList().subscribe((data) => {
-      this.employees = data;
-    });
+  onSubmit() {
+    console.log(this.employee);
   }
 }
