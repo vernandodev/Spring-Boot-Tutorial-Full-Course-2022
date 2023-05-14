@@ -27,6 +27,15 @@ export class UpdateEmployeeComponent {
   }
 
   onSubmit() {
-    this.employeeService.updateEmployee(this.id, this.employee).subscribe((data) => {});
+    this.employeeService.updateEmployee(this.id, this.employee).subscribe(
+      (data) => {
+        this.getToEmployeeList();
+      },
+      (error) => console.log(error)
+    );
+  }
+
+  getToEmployeeList() {
+    this.router.navigate(["/employees"]);
   }
 }
