@@ -1,5 +1,5 @@
 <h2>Employee List Table</h2>
-<button (click)="getToCreateEmployeeList()" class="btn btn-primary">Add +</button>
+<button (click)="getToCreateEmployeeList()" class="btn btn-success">Add +</button>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -15,7 +15,9 @@
       <td>{{ employee.lastName }}</td>
       <td>{{ employee.emailId }}</td>
       <td>
-        <button (click)="updateEmployee(employee.id)" class="btn btn-info">Update</button>
+        <button (click)="updateEmployee(employee.id)" class="btn btn-warning">Update</button>
+        <button (click)="deleteEmployee(employee.id)" class="btn btn-danger" style="margin-left: 15px; margin-right: 15px">Delete</button>
+        <button (click)="deleteEmployee(employee.id)" class="btn btn-info">Detail</button>
       </td>
     </tr>
   </tbody>

@@ -11,6 +11,10 @@
   color: white;
 }
 
+.create-button {
+  background-color: rgb(13, 130, 207);
+}
+
 .bottom {
   bottom: 200px;
 }
