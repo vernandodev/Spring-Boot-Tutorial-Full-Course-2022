@@ -6,7 +6,7 @@
   bottom: 0;
   width: 100%;
   height: 10%;
-  background-color: rgb(60, 174, 250);
+  background-color: rgb(13, 130, 207);
   text-align: center;
   color: white;
 }
@@ -16,5 +16,5 @@
 }
 
 .navbar {
-  background-color: rgb(60, 174, 250);
+  background-color: rgb(13, 130, 207);
 }
